@@ -1,0 +1,15 @@
+<script type="text/javascript">
+  function Person(opts){
+    var one = {
+      name: opts.name || 'wu-qi'
+    };
+    one.sayName =  function(){
+      console.log(this.name)
+    }
+    return one;
+  }
+
+  //调用
+  var p1 = Person({name:'m'})
+  var p2 = Person({name:'n'})
+</script>

@@ -1,0 +1,38 @@
+<script type="text/javascript">
+  var EventCenter = (function(){
+    var events = {}
+   /*{
+       my_event: [{handler: function(data){xxx}}, {handler: function(data){yyy}}]
+     }
+  */
+  //绑定
+    function on(event,handler){
+      events[event] = events[event]||[];
+      events[event].push({
+        handler:handler
+      });
+    }
+  //触发
+    function fire(event,args){
+      if(!event[event]){
+        return
+      }
+      for(var i=0;i<event[event].length;i++){
+        events[event][i].handler(args);
+      }
+    }
+
+    return {
+      on: on,
+      fire: fire
+    }
+  })();
+
+  EventCenter.on('myevent',function(data){
+    console.log('myevent received...')
+  })
+   EventCenter.on('myevent',function(data){
+    console.log('myevent2 received...')
+  })
+  EventCenter.fire('myevent');
+</script>

@@ -1,0 +1,24 @@
+<script type="text/javascript">
+  var People = (function(){
+    var instance;
+    function init(){
+      //define private methods and properties
+      //do something
+      return {
+        //define public methods and properties
+      }
+    }
+    return {
+      createPeople: function() {
+        if(!instance){
+          instance = init();
+        }
+        return instance;
+      }
+    };
+  }())
+  
+  //两者返回值是相同的 obj1 === obj2
+  var obj1 = People.createPeople();
+  var obj2 = People.createPeople();
+</script>

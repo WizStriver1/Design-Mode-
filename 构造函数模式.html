@@ -1,0 +1,13 @@
+<script type="text/javascript">
+  function Person(name,age){
+    this.name = name;
+    this.age = age;
+  }
+  Person.prototype.sayName = function(){
+    return this.name;
+  }
+  
+  //调用
+  var student = new Person('qi',22);
+  console.log(student);
+</script>
